@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+   <!-- <TargetFramework>net6.0-windows</TargetFramework> -->
+    <TargetFramework>net6.0-windows$([Microsoft.Build.Utilities.ToolLocationHelper]::GetLatestSDKTargetPlatformVersion('Windows', '10.0'))</TargetFramework>
+
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  
+    <ItemGroup>
+      <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.2.7" />
+      <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
+    
+      
+      <PackageReference Include="WpfAnalyzers" Version="4.1.1">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      </PackageReference>
+    
+   <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.1.635-beta">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.0.1" />
+  
+  </ItemGroup>
+  
+    <ItemGroup>
+      <ProjectReference Include="..\CaptureSampleCore\CaptureSampleCore.csproj" />
+      <ProjectReference Include="..\Composition.WindowsRuntimeHelpers\Composition.WindowsRuntimeHelpers.csproj" />
+    </ItemGroup>
+  
+    <ItemGroup>
+      <Folder Include="Services\" />
+    </ItemGroup>
+  
+ 
+
+</Project>
