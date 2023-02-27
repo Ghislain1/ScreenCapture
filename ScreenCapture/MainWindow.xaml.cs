@@ -117,7 +117,7 @@ public partial class MainWindow : MetroWindow
             {
                 StartHwndCapture(hwnd);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 Debug.WriteLine($"Hwnd 0x{hwnd.Value:X8} is not valid for capture!");
                 _processes.Remove(process);
