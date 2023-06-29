@@ -10,7 +10,7 @@
 
 namespace Figma;
 
-using Composition.WindowsRuntimeHelpers;
+ 
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -18,7 +18,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using Windows.System;
+ 
 
 /// <summary>
 /// Interaction logic for App.xaml
@@ -27,8 +27,8 @@ public partial class App : Application
 {
     public App()
     {
-        _controller = CoreMessagingHelper2.CreateDispatcherQueueControllerForCurrentThread();
+       
     }
 
-    private DispatcherQueueController _controller;
+   
 }

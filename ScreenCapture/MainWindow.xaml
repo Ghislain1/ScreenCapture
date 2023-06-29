@@ -4,12 +4,10 @@
                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                    xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"                
-                   xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"              
-               
-          
+                   xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"                      
                    TryToBeFlickerFree="False"                                  
                    mc:Ignorable="d"
-                                  SaveWindowPosition="True"
+                   SaveWindowPosition="True"
                    ShowSystemMenu="True"
                    NonActiveWindowTitleBrush="Wheat"
                    WindowStyle="SingleBorderWindow"
@@ -25,50 +23,10 @@
 
   <Grid>
     <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="200" />
+      <ColumnDefinition Width="*" />
       <ColumnDefinition />
     </Grid.ColumnDefinitions>
-
-    <Grid x:Name="ControlsGrid"
-          Grid.Column="0">
-      <Grid.RowDefinitions>
-        <RowDefinition />
-        <RowDefinition Height="Auto" />
-      </Grid.RowDefinitions>
-      <StackPanel Margin="10">
-        <Button x:Name="PickerButton"
-                Content="Use Picker"
-                Click="PickerButton_Click"
-                Margin="10" />
-        <ComboBox x:Name="WindowComboBox"
-                  Margin="10"
-                  SelectionChanged="WindowComboBox_SelectionChanged">
-          <ComboBox.ItemTemplate>
-            <DataTemplate>
-              <TextBlock Text="{Binding MainWindowTitle}" />
-            </DataTemplate>
-          </ComboBox.ItemTemplate>
-        </ComboBox>
-        <Button x:Name="PrimaryMonitorButton"
-                Content="Use Primary Monitor"
-                Click="PrimaryMonitorButton_Click"
-                Margin="10" />
-        <ComboBox x:Name="MonitorComboBox"
-                  Margin="10"
-                  SelectionChanged="MonitorComboBox_SelectionChanged">
-          <ComboBox.ItemTemplate>
-            <DataTemplate>
-              <TextBlock Text="{Binding DeviceName}" />
-            </DataTemplate>
-          </ComboBox.ItemTemplate>
-        </ComboBox>
-      </StackPanel>
-      <Button x:Name="StopButton"
-              Grid.Row="1"
-              Content="Stop Capturing"
-              Click="StopButton_Click"
-              Margin="10" />
-    </Grid>
+    <DataGrid ItemsSource="{Binding Items}"></DataGrid>
 
     <Grid Grid.Column="1">
       <Rectangle Fill="WhiteSmoke" />
